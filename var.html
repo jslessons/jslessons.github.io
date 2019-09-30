@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width" name='viewport'>
+	<title>Главная страница</title>
+	<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body>
+	<div class="container">
+			<h1 class="main-title">Переменные и типы данных</h1>
+			<h2 class="title">Вывод данных</h2>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>()
+			</p>
+			<p class="text">В качестве списка аргументов функция получает информацию, которую нужно вывести, например:</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="purple">10</span>);
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Hello world'</span>);
+				<br>
+				<span class="grey">// Hello world</span>
+			</p>
+			<p class="text">Можно передать не один, а несколько значений:</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="purple">true</span>, <span class="purple">10</span>, <span class="yellow">'Hi'</span>, <span class="purple">123</span>);
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="purple">10</span>, <span class="purple">1</span>, <span class="purple">2</span>);
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'a'</span>, <span class="yellow">'b'</span>, <span class="yellow">'c'</span>);
+				<br>
+				<span class="grey">// true 10 Hi 123</span>
+				<br>
+				<span class="grey">// 10 1 2</span>
+				<br>
+				<span class="grey">// a b c</span>
+			</p>
+			<h2 class="title">Что такое переменная?</h2>
+			<p class="text">Переменной в программировании называется именованный контейнер для некоторого значения. Представьте себе ящик с наклееным на него стикером. Вы кладете что-нибудь в ящик и пишете на стикере короткое имя без пробелов и знаков препинания, начинающееся с буквы английского алфавита, примерно так же работает переменная в программировании.</p>
+			<p class="text">Для создания переменной используется модификатор (специальное слово для объявления имени переменной). В JS есть три модификатора:</p>
+			<p class="text">1. var</p>
+			<p class="text">2. const</p>
+			<p class="text">3. let</p>
+			<p class="text">Модификатор const создает неизменяемую переменную. В чем отличие let и var, мы разберем позднее.</p>
+			<p class="code">
+				<span class="blue">var</span> a<span class="red"> = </span><span class="purple">10</span>;
+				<br>
+				<span class="blue">var</span> A<span class="red"> = </span><span class="purple">20</span>;
+			</p>
+			<p class="text">a и А - это разные переменные, регистр ввода имеет значение</p>
+			<h2 class="title">Типы данных</h2>
+			<p class="text">Информация получаемая нами с помощью различных органов чувств делится на зрительную, слуховую, обонятельную, осязательную и другие. В программировании так же есть свое разделение, разделение на типы данных. </p>
+			<p class="text">В JavaScript есть 6 типов данных: number, string, bool, object, undefined, null.</p>
+			<p class="code">
+				<span class="blue">var</span> a<span class="red"> = </span><span class="purple">10</span>;
+				<br>
+				<span class="blue">var</span> b<span class="red"> = </span><span class="yellow">'Hello'</span>;
+				<br>
+				<span class="blue">var</span> c<span class="red"> = </span><span class="purple">true</span>;
+				<br>
+				<span class="blue">var</span> d<span class="red"> = </span>{<span class="yellow">'name'</span>: <span class="yellow">'Maxim'</span>, <span class="yellow">'age'</span>: <span class="purple">20</span>};
+				<br>
+				<span class="blue">var</span> noValue<span class="red"> = </span>undefined;
+				<br>
+				<span class="blue">var</span> emptyValue<span class="red"> = </span>null;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(a, <span class="blue">typeof</span>(a));
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(b, <span class="blue">typeof</span>(b));
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(c, <span class="blue">typeof</span>(c));
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(d, <span class="blue">typeof</span>(d));
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(emptyValue, <span class="blue">typeof</span>(emptyValue));
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(noValue, <span class="blue">typeof</span>(noValue));
+				<br>
+				<span class="grey">// 10 "number"</span>
+				<br>
+				<span class="grey">// Hello string</span>
+				<br>
+				<span class="grey">// true "boolean"</span>
+				<br>
+				<span class="grey">// {name: "Maxim", age: 20} "object"</span>
+				<br>
+				<span class="grey">// undefined "undefined"</span>
+				<br>
+				<span class="grey">// null "object"</span>
+			</p>
+			<p class="text">Рассмотрим подробнее каждый из них:</p>
+			<h2 class="title">Число</h2>
+			<p class="text">Числовой тип данных (number) - это  целочисленные и числа с плавающей точкой.</p>
+			<p class="text">К числам мы можем применять различные математические операции, такие как умножение *, деление /, сложение +, вычитание - и так далее. </p>
+			<p class="text">Кроме обычных чисел, существуют так называемые «специальные числовые значения», которые относятся к этому типу данных: Infinity, -Infinity и NaN. Мы можем получить такие значения, например, при делении на ноль:</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="purple">1</span><span class="red"> / </span><span class="purple">0</span>);
+			</p>
+			<p class="text">NaN или Not a Number (не число) означает вычислительную ошибку, например:</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'hello'</span><span class="red"> / </span><span class="purple">2</span>);
+			</p>
+			<p class="text">В отличие от других языков в JS скрипт не остановится при получении ошибки в вычислениях.</p>
+			<h2 class="title"><Подзаголовок> Функция random</h2>
+			<p class="code">
+				<span class="blue">var</span> my_random_number<span class="red"> = </span>Math.<span class="blue">random</span>();
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(my_random_number);
+			</p>
+			<p class="text">При каждом новом запуске этого скрипта будет выводится случайное число в диапазоне от 0 до 1.Расширим диапазон, умножим результат работы функции random на 10:</p>
+			<p class="code">
+				<span class="blue">var</span> my_random_number<span class="red"> = </span>Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">10</span>;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(my_random_number);
+			</p>
+			<p class="text">Теперь результат будет лежать в диапазоне от 0 до 10. Округлим полученное число вниз (9.87126378 -> 9, 1.7213781-> 1)</p>
+			<p class="code">
+				<span class="blue">var</span> my_random_number<span class="red"> = </span><span class="blue">parseInt</span>( Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">10</span> );
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(my_random_number);
+			</p>
+			<p class="text">Функция parseInt() делает значение целочисленным (без дробной части).</p>
+			<p class="text">Еще одна математическая операция - остаток от деления</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="purple">10</span> <span class="red">%</span> <span class="purple">3</span>); <span class="grey">// Взятие остатка от деления (19 % 2 == 1, 28 % 15 == 13, 30 % 25 = 5)</span>
+			</p>
+			<h2 class="title">Строка</h2>
+			<p class="text">Строка (string) в JavaScript должна быть заключена в кавычки.</p>
+			<p class="text">В JavaScript существует три типа кавычек.</p>
+			<p class="text">Двойные кавычки: "Привет".</p>
+			<p class="text">Одинарные кавычки: 'Привет'.</p>
+			<p class="text">Обратные кавычки: `Привет`.</p>
+			<p class="text">Двойные или одинарные кавычки являются «простыми», между ними нет разницы в JavaScript.</p>
+			<p class="text">Обратные кавычки же имеют «расширенный функционал». Они позволяют нам встраивать выражения в строку, заключая их в ${…}. Например:</p>
+			<p class="code">
+				<span class="blue">var</span> name<span class="red"> = </span>"Петя";
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>( <span class="yellow">`Привет, ${name}!`</span> );
+				<br>
+				<span class="grey">// Привет, Петя</span>
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>( <span class="yellow">`результат: ${1 + 2}`</span> );
+				<br>
+				<span class="grey">// результат: 3</span>
+			</p>
+			<h2 class="title">Булевый (логический) тип</h2>
+			<p class="text">Булевый тип (boolean) может принимать только два значения: true (истина) и false (ложь).</p>
+			<p class="text">Такой тип, как правило, используется для хранения значений да/нет: true значит «да, правильно», а false значит «нет, не правильно».</p>
+			<p class="code">
+				<span class="blue">var</span> isReady<span class="red"> = </span><span class="purple">true</span>;
+				<br>
+				<span class="blue">var</span> isWorking<span class="red"> = </span><span class="purple">false</span>;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(isReady, isWorking);
+				<br>
+				<span class="grey">// true false</span>
+			</p>
+			<p class="text">Булевые значения также могут быть результатом сравнений:</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="purple">10</span><span class="red"> > </span><span class="purple">5</span>);
+				<br>
+				<span class="grey">// true</span>
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="purple">10</span><span class="red"> < </span><span class="purple">5</span>);
+				<br>
+				<span class="grey">// false</span>
+			</p>
+			<h2 class="title">null</h2>
+			<p class="text">Специальное значение null не относится ни к одному из типов, описанных выше. Оно формирует отдельный тип, который содержит только значение null:</p>
+			<p class="code">
+				<span class="blue">var</span> age<span class="red"> = </span>null;
+			</p>
+			<p class="text">В JavaScript null не является «ссылкой на несуществующий объект» или «нулевым указателем», как в некоторых других языках. Это просто специальное значение, которое представляет собой «ничего», «пусто» или «значение неизвестно».</p>
+			<h2 class="title">Значение «undefined»</h2>
+			<p class="text">Специальное значение undefined также стоит особняком. Оно формирует тип из самого себя так же, как и null. </p>
+			<p class="text">но означает, что «значение не было присвоено».</p>
+			<p class="text">Если переменная объявлена, но ей не присвоено никакого значения, то её значением будет undefined:</p>
+			<p class="code">
+				<span class="blue">var</span> x;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(x); <span class="grey">// выведет "undefined"</span>
+			</p>
+			<p class="text">Технически мы можем присвоить значение undefined любой переменной:</p>
+			<h2 class="title">Объекты и символы</h2>
+			<p class="text">Тип object (объект) – особенный.</p>
+			<p class="text">Все остальные типы называются «примитивными», потому что их значениями могут быть только простые значения (будь то строка или число, или что-то ещё). Объекты же используются для хранения коллекций.</p>
+			<p class="code">
+				<span class="blue">var</span> user<span class="red"> = </span>{name: <span class="yellow">'Maxim'</span>, age: <span class="purple">20</span>, password: <span class="purple">123456</span>, email: <span class="yellow">'gr4m0zeka@gmail.com'</span>};
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(user);
+				<br>
+				<span class="grey">// {name: "Maxim", age: 20, password: 123456, emai: "gr4m0zeka@gmail.com"}</span>
+			</p>
+			<h2 class="title">Задачи на арифметику</h2>
+			<p class="text"><span class="num">1. </span> Найти длину окружности L и площадь круга S заданного радиуса R. Формула: <span class="high">L = 2*π*R</span>, <span class="high">S = π*R*R</span> . В качестве значения π использовать 3.14</p>
+			<p class="text"><span class="num">2. </span> Даны два числа a и b. Найти их среднее арифметическое: <span class="high">(a + b)/2</span>.</p>
+			<p class="text"><span class="num">3. </span> Вводится x, найти значение выражения: <span class="high">3*(x**6) – 6*(x**2) – 7</span> где <span class="high">x**6</span> - это икс в степени 6 или <span class="high">x*x*x*x*x*x</span>, пример:</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(Math.<span class="blue">pow</span>(<span class="purple">4</span>, <span class="purple">2</span>)) <span class="grey">// 16</span>
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(Math.<span class="blue">pow</span>(<span class="purple">3</span>, <span class="purple">3</span>)) <span class="grey">// 27</span>
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(Math.<span class="blue">pow</span>(<span class="purple">5</span>, <span class="purple">3</span>)) <span class="grey">// 125</span>
+			</p>
+			<p class="text"><span class="num">4. </span> Дано значение температуры T в градусах Цельсия. Определить значение этой же температуры в градусах Фаренгейта. Температура по Цельсию Tс и температура по Фаренгейту TF связаны следующим соотношением: <span class="high">TC = (TF − 32)·5/9</span>.</p>
+			<p class="text"><span class="num">5. </span> Известно, что X кг конфет стоит A рублей. Определить, сколько стоит 1 кг и Y кг этих же конфет</p>
+			<p class="text"><span class="num">6. </span> Дано расстояние L в сантиметрах. Используя операцию деления нацело, найти количество полных метров в нем (1 метр = 100 см).</p>
+			<p class="text"><span class="num">7. </span> Дана масса M в килограммах. Используя операцию деления нацело, найти количество полных тонн в ней (1 тонна = 1000 кг)</p>
+			<p class="text"><span class="num">8. </span> Дан размер файла в байтах. Используя операцию деления нацело, найти количество полных килобайтов, которые занимает данный файл (1 килобайт = 1024 байта)</p>
+			<p class="text"><span class="num">9. </span> Даны целые положительные числа A и B (A > B). На отрезке длины A размещено максимально возможное количество отрезков длины B (без наложений). Используя операцию деления нацело, найти количество отрезков B, размещенных на отрезке A.</p>
+
+		</div>
+	</body>
+</html>
