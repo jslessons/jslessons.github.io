@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width" name='viewport'>
+	<title>Главная страница</title>
+	<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body>
+	<div class="container">
+			<h1 class="main-title">Условный оператор</h1>
+			<a href="index.html" class="link special" >Назад в начало</a>
+			<p class="text">Условный оператор или оператор ветвления - это оператор, конструкция языка программирования, обеспечивающая выполнение определённой команды (набора команд) только при условии истинности некоторого логического выражения, либо выполнение одной из нескольких команд (наборов команд) в зависимости от значения некоторого выражения. Спасибо, Википедия! Такое определение можно найти в любой книге по программированию. Его крайне желательно хотя бы понимать. </p>
+			<p class="text">Попробую дать более популярное определение: условный оператор выполняет некоторое действие, если указанное условие истинно (равно true).</p>
+			<p class="text">Вот так выглядит if...else в JS</p>
+			<p class="code">
+				<span class="red">if </span>(<span class="purple">true</span>) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Условие истинно, поэтому я напечатаюсь'</span>);
+				<br>
+				}
+			</p>
+			<p class="text">Приведу пример поинтереснее:</p>
+			<p class="code">
+				<span class="blue">var</span> a<span class="red"> = </span><span class="purple">10</span>;
+				<br>
+				<span class="blue">var</span> b<span class="red"> = </span><span class="purple">5</span>;
+				<br>
+				<span class="red">if </span>(a<span class="red"> > </span>b) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'a больше b равно true'</span>);
+				<br>
+				}
+			</p>
+			<p class="text">Если условие ложно, то код, находящийся под оператором if не выполнится:</p>
+			<p class="code">
+				<span class="blue">var</span> a<span class="red"> = </span><span class="purple">3</span>;
+				<br>
+				<span class="blue">var</span> b<span class="red"> = </span><span class="purple">9999999</span>;
+				<br>
+				<span class="red">if </span>(a<span class="red"> > </span>b) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Я никогда не напечатаюсь :('</span>);
+				<br>
+				}
+			</p>
+			<p class="text">Дополним предыдущий пример оператором else</p>
+			<p class="code">
+				<span class="blue">var</span> a<span class="red"> = </span><span class="purple">3</span>;
+				<br>
+				<span class="blue">var</span> b<span class="red"> = </span><span class="purple">9999999</span>;
+				<br>
+				<span class="red">if </span>(a<span class="red"> > </span>b) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Я никогда не напечатаюсь :('</span>);
+				<br>
+				} <span class="red">else</span> {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Условие ложно, поэтому я напечатаюсь'</span>);
+				<br>
+				}
+			</p>
+			<p class="text">Если условие в if ложно, то выполнится оператор под оператором else</p>
+			<p class="text">Приведу еще несколько примеров:</p>
+			<p class="code">
+				<span class="grey">// Вывести большее из двух чисел,</span>
+				<br>
+				<span class="grey">// введенных с клавиатуры</span>
+				<br>
+				<span class="blue">var</span> a<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">20</span>);
+				<br>
+				<span class="blue">var</span> b<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">20</span>);
+				<br>
+				<span class="red">if </span>(a<span class="red"> > </span>b) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Большее число a = '</span> <span class="red">+ </span>a);
+				<br>
+				} <span class="red">else</span> {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Большее число b = '</span> <span class="red">+ </span>b);
+				<br>
+				}
+			</p>
+			<p class="code">
+				<span class="grey">// Проверить число a на четность</span>
+				<br>
+				<span class="blue">var</span> a<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">20</span>);
+				<br>
+				<span class="red">if </span>(a <span class="red">%</span> <span class="purple">2</span> <span class="red">==</span> <span class="purple">0</span>) {
+				<br>
+				   <span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'четное'</span>);
+				<br>
+				}
+				<br>
+				<span class="red">else</span> {
+				<br>
+				   <span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'нечетное'</span>);
+				<br>
+				}
+			</p>
+			<p class="text">Иногда двух вариантов недостаточно...</p>
+			<p class="code">
+				<span class="blue">var</span> age<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">5</span> <span class="red">+ </span><span class="purple">20</span>);
+				<br>
+				<span class="red">if </span>(age<span class="red"> < </span><span class="purple">10</span>) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Ваш возраст - это одна цифра :)'</span>);
+				<br>
+				} <span class="red">else</span> <span class="red">if </span>(age<span class="red"> < </span><span class="purple">15</span>) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Геометрия - это жестко (хочу обратно в началку)'</span>);
+				<br>
+				} <span class="red">else</span>{
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'В школе было круто'</span>);
+				<br>
+				}
+			</p>
+			<p class="text">В приведенном выше примере, есть три варианта развития событий, но это не значит, что мы ограничены в количестве дополнительных условий.</p>
+			<p class="code">
+				<span class="blue">var</span> a<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">4</span>);
+				<br>
+				<span class="red">if </span>(a <span class="red">==</span> <span class="purple">1</span>) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'одын'</span>)
+				<br>
+				} <span class="red">else</span> <span class="red">if </span>(a <span class="red">==</span> <span class="purple">2</span>) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'двоенька'</span>)
+				<br>
+				} <span class="red">else</span> <span class="red">if </span>(a <span class="red">==</span> <span class="purple">3</span>) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'тройка'</span>)
+				<br>
+				} <span class="red">else</span> <span class="red">if </span>(a <span class="red">==</span> <span class="purple">4</span>) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'четверочка'</span>)
+				<br>
+				} <span class="red">else</span>{
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'нолик'</span>)
+				<br>
+				}
+			</p>
+			<p class="text">Да, мне нечем было заняться, ну и что? Никогда не делайте так, как написано в примере выше. Если в вашем коде больше трех else if значит что-то не так и стоит придумать новый алгоритм. Давайте еще разок: много условий - плохо! </p>
+			<h2 class="title">Примеры решения задач</h2>
+			<p class="text">Проверить является ли клетка шахматной доски белой</p>
+			<p class="code">
+				<span class="grey">// Два числа выбираются случайным образом (координаты клетки шахматного поля, от 1 до 8)</span>
+				<br>
+				<span class="grey">// Вывести YES, если клетка белая, и NO, если клетка черная</span>
+				<br>
+				x<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">7</span> <span class="red">+ </span><span class="purple">1</span>);
+				<br>
+				y<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">7</span> <span class="red">+ </span><span class="purple">1</span>);
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(x, y);
+				<br>
+				<span class="red">if </span>((x <span class="red">+ </span>y) <span class="red">%</span> <span class="purple">2</span> <span class="red">==</span> <span class="purple">1</span>) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'YES'</span>)
+				<br>
+				} <span class="red">else</span> {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'NO'</span>)
+				<br>
+				}
+			</p>
+			<p class="text">Проверить может ли слон ходить с первой шахматной на вторую</p>
+			<p class="code">
+				<span class="grey">// Четыре числа выбираются случайным образом (координаты клетки шахматного поля, от 1 до 8)</span>
+				<br>
+				<span class="grey">// Вывести YES, если ладья может сходить с первой клетки на вторую, и NO, если не может</span>
+				<br>
+				<span class="grey">// Напомню, что ладья ходит так:</span>
+				<br>
+				<span class="grey">// Л -----X</span>
+				<br>
+				<span class="grey">// |</span>
+				<br>
+				<span class="grey">// |</span>
+				<br>
+				<span class="grey">// |</span>
+				<br>
+				<span class="grey">// X</span>
+				<br>
+				<span class="grey">// Оператор && - это логическое "И", одновременное выполнение условий. </span>
+				<br>
+				<span class="grey">// Оператор || - логическое "ИЛИ", хотя бы одно из условий истинно.</span>
+				<br>
+				x1<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">7</span> <span class="red">+ </span><span class="purple">1</span>);
+				<br>
+				y1<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">7</span> <span class="red">+ </span><span class="purple">1</span>);
+				<br>
+				x2<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">7</span> <span class="red">+ </span><span class="purple">1</span>);
+				<br>
+				y2<span class="red"> = </span><span class="blue">parseInt</span>(Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">7</span> <span class="red">+ </span><span class="purple">1</span>);
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(x1, y1);
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(x2, y2);
+				<br>
+				<span class="red">if </span>(x1 <span class="red">==</span> x2 <span class="red">&&</span> y1 <span class="red">!= </span>y2 <span class="red">||</span> x1 <span class="red">!= </span>x2 <span class="red">&&</span> y1 <span class="red">==</span> y2) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'YES'</span>);
+				<br>
+				} <span class="red">else</span>{
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'NO'</span>);
+				<br>
+				}
+			</p>
+			<h2 class="title">Решение задач</h2>
+			<p class="text"><span class="num">1. </span>Даны три числа. Найти среднее из них (то есть число, расположенное между наименьшим и наибольшим)</p>
+			<p class="text"><span class="num">2. </span>Даны три переменные вещественного типа: A, B, C. Если их значения упорядочены по возрастанию, то удвоить их; в противном случае заменить значение каждой переменной на противоположное. Вывести новые значения переменных A, B, C.</p>
+			<p class="text"><span class="num">3. </span>Даны четыре целых числа, одно из которых отлично от трех других, равных между собой. Определить порядковый номер числа, отличного от остальных.</p>
+			<p class="text"><span class="num">4. </span>Дано целое число. Вывести его строку-описание вида "отрицательное четное число", "нулевое число", "положительное нечетное число" и т. д</p>
+			<p class="text"><span class="num">5. </span>Дано целое число, лежащее в диапазоне 1-999. Вывести его строкуописание вида "четное двузначное число", "нечетное трехзначное число" и т. д.</p>
+			<p class="text"><span class="num">6. </span>Дан номер года (положительное целое число). Определить количество дней в этом году, учитывая, что обычный год насчитывает 365 дней, а високосный - 366 дней. Високосным считается год, делящийся на 4, за исключением тех годов, которые делятся на 100 и не делятся на 400 (например, годы 300, 1300 и 1900 не являются високосными, а 1200 и 2000 - являются).</p>
+			<p class="text"><span class="num">7. </span>Шахматный король ходит по горизонтали, вертикали и диагонали, но только на 1 клетку. Даны две различные клетки шахматной доски, определите, может ли король попасть с первой клетки на вторую одним ходом. Программа получает на вход четыре числа от 1 до 8 каждое, задающие номер столбца и номер строки сначала для первой клетки, потом для второй клетки. Программа должна вывести YES, если из первой клетки ходом короля можно попасть во вторую или NO в противном случае.</p>
+			<p class="text"><span class="num">8. </span>Шахматный ферзь ходит по диагонали, горизонтали или вертикали. Даны две различные клетки шахматной доски, определите, может ли ферзь попасть с первой клетки на вторую одним ходом.</p>
+			<p class="text"><span class="num">9. </span>Шахматный конь ходит буквой "Г" - на две клетки по вертикали в любом направлении и на одну клетку по горизонтали, или наоборот. Даны две различные клетки шахматной доски, определите, может ли конь попасть с первой клетки на вторую одним ходом.</p>
+			<p class="text"><span class="num">10. </span>Шоколадка имеет вид прямоугольника, разделенного на n x m долек. Шоколадку можно один раз разломить по прямой на две части. Определите, можно ли таким образом отломить от шоколадки часть, состоящую ровно из k долек. Программа получает на вход три числа: n, m, k и должна вывести YES или NO.</p>
+			<p class="text"><span class="num">11. </span>Дано натуральное число. Требуется определить, является ли год с данным номером високосным. Если год является високосным, то выведите YES, иначе выведите NO. Напомним, что в соответствии с григорианским календарем, год является високосным, если его номер кратен 4, но не кратен 100, а также если он кратен 400.</p>
+			<p class="text"><span class="num">12. </span>Треугольник существует только тогда, когда сумма любых двух его сторон больше третьей. Дано a, b, c - стороны предполагаемого треугольника. Требуется сравнить длину каждого отрезка-стороны с суммой двух других. Если хотя бы в одном случае отрезок окажется больше суммы двух других, то треугольника с такими сторонами не существует.</p>
+
+		</div>
+	</body>
+</html>
