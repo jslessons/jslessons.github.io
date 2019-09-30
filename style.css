@@ -68,7 +68,7 @@ a:before, a:after, a > span:before, a > span:after {
 	line-height: 1;
 }
 .link {
-  padding: 0 30px;
+  padding: 5px 30px;
   min-width: 320px;
   display: inline-block;
   font-size: 1.3rem;
