@@ -86,7 +86,7 @@ html,body {
 }
 
 .code_text {
-    white-space: normal
+    white-space: nowrap;
 }
 
 .grey {
