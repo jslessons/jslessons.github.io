@@ -311,6 +311,9 @@ svg {
 }
 
 @media all and (max-width:480px) {
+	.big-title {
+		font-size: 2.5rem;
+	}
     #down {
         bottom: 5vmin
     }
