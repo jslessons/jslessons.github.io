@@ -75,7 +75,8 @@ html,body {
     font-family: monospace;
     color: #fff;
     border-radius: 4px;
-    background-color: #2c292d
+    background-color: #2c292d;
+    white-space: nowrap;
 }
 
 .code {
