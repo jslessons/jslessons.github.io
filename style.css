@@ -241,12 +241,14 @@ svg {
     font-size: 24px;
     font-family: 'Source Code Pro', monospace;
     transition: 0.3s;
+    overflow-x: auto;
 }
 
 
-@media screen and (pointer: fine) {
-    .card:hover {
-
+@media screen and (max-width: 768px) {
+    
+    .card {
+        font-size: 18px;
     }
 }
 
