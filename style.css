@@ -62,8 +62,9 @@ body {
     margin-bottom: 10px;
     font-family: 'Source Code Pro', monospace;
     text-align: justify;
-    hyphens: auto;
     -webkit-hyphens: auto;
+    hyphens: auto;
+   
 
 }
 
@@ -72,8 +73,8 @@ body {
     margin: 0.75em 0;
     line-height: 1.75;
     text-align: justify;
-    hyphens: auto;
     -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 .b {
