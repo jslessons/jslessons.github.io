@@ -3,15 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width" name='viewport'>
-	<title>Главная страница</title>
+	<title>Переменные и типы данных</title>
 	<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;display=swap" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Source+Code+Pro&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css">
 </head>
 <body>
 	<div class="container">
 			<h1 class="main-title">Переменные и типы данных</h1>
 			<a href="index.html" class="link special">Назад в начало</a>
-			<h2 class="title">Вывод данных</h2>
+			<h2 class="title" style='margin-top: 1em'>Вывод данных</h2>
 			<p class="code">
 				<span class="blue">console</span>.<span class="blue">log</span>()
 			</p>
@@ -38,18 +39,23 @@
 				<span class="grey">// a b c</span>
 			</p>
 			<h2 class="title">Что такое переменная?</h2>
-			<p class="text">Переменной в программировании называется именованный контейнер для некоторого значения. Представьте себе ящик с наклееным на него стикером. Вы кладете что-нибудь в ящик и пишете на стикере короткое имя без пробелов и знаков препинания, начинающееся с буквы английского алфавита, примерно так же работает переменная в программировании.</p>
-			<p class="text">Для создания переменной используется модификатор (специальное слово для объявления имени переменной). В JS есть три модификатора:</p>
-			<p class="text">1. var</p>
-			<p class="text">2. const</p>
-			<p class="text">3. let</p>
-			<p class="text">Модификатор const создает неизменяемую переменную. В чем отличие let и var, мы разберем позднее.</p>
+			<p class="text"><span class="bold">Переменная</span> в программировании - это именованный контейнер для некоторого значения.</p>
+			<p class="text">Представьте себе ящик с наклееным на него стикером. Вы кладете что-нибудь в ящик и пишете на стикере короткое имя без пробелов и знаков препинания, начинающееся с буквы английского алфавита, примерно так же работает переменная в программировании.</p>
+			<p class="text">В JavaScript для создания переменной используется модификатор (специальное слово для объявления имени переменной).</p>
+			<p class='text'>Существует три модификатора:</p>
+			<ul class="tasks">
+				<li class="task">var</li>
+				<li class="task">let</li>
+				<li class="task">const</li>
+			</ul>
+			<p class="text">Модификатор <span class='ci'>const</span> создает неизменяемую переменную, а модификаторы <span class='ci'>let</span> и <span class='ci'>var</span> - изменяемую.</p>
+			<p class="text">Модификатор <span class="ci">var</span> признан устаревшим и не рекомендуется к использованию.</p>
 			<p class="code">
 				<span class="blue">var</span> a<span class="red"> = </span><span class="purple">10</span>;
 				<br>
 				<span class="blue">var</span> A<span class="red"> = </span><span class="purple">20</span>;
 			</p>
-			<p class="text">a и А - это разные переменные, регистр ввода имеет значение</p>
+			<p class="text">a и А - это разные переменные, регистр ввода имеет значение.</p>
 			<h2 class="title">Типы данных</h2>
 			<p class="text">Информация получаемая нами с помощью различных органов чувств делится на зрительную, слуховую, обонятельную, осязательную и другие. В программировании так же есть свое разделение, разделение на типы данных. </p>
 			<p class="text">В JavaScript есть 6 типов данных: number, string, bool, object, undefined, null.</p>

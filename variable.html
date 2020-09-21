@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width" name='viewport' initial-scale='1'>
+		<title>Переменные и типы данных</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="main-title">Переменные и типы данных</h1>
+			<a href="index.html" class="link special" >Назад в начало</a>
+			<h2 class="title" style='margin-top: 1em;'>Вывод данных</h2>
+			<p class="text">Функция <span class="ci">console.log()</span> выводит переданные в нее значения в консоль браузера или на экран терминала (в случае NodeJS).</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Hello world!'</span>);
+			</p>
+			<p class="code">
+				> Hello world!
+			</p>
+			<p class="text">Значения могут быть перечислены через запятую:</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Apple'</span>, <span class="yellow">'Orange'</span>, <span class="yellow">'Grape'</span>);
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="purple">1</span>, <span class="purple">2</span>, <span class="purple">3</span>);
+			</p>
+			<p class="code">
+				> Apple Orange Grape
+				<br>
+				> 1 2 3
+			</p>
+			<h2 class="title">Что такое переменная?</h2>
+			<p class="text"><span class="b">Переменная</span> в программировании <span class="b">-</span> это именованный <span class="b">контейнер</span> для некоторого значения.</p>
+			<p class="text">Представьте себе ящик с наклееным на него стикером. Вы кладете что-нибудь в ящик и пишете на стикере короткое имя без пробелов и знаков препинания, начинающееся с буквы английского алфавита, примерно так же работает переменная в программировании.</p>
+			<p class="text">В JavaScript для создания переменной используется <span class="b">модификатор</span> (специальное слово для объявления имени переменной).</p>
+			<p class="text">Существует 3 модификатора:</p>
+			<ul class="tasks">
+				<li class="task">var</li>
+				<li class="task">let</li>
+				<li class="task">const</li>
+			</ul>
+			<p class="text">Модификатор <span class="ci">const</span> создает неизменяемую переменную, а модификаторы <span class="ci">let</span> и <span class="ci">var</span> - изменяемую.</p>
+			<p class="text">Модификатор <span class="ci">var</span> признан устаревшим и не рекомендуется к использованию.</p>
+			<p class="code">
+				<span class="blue">let </span>name<span class="red"> = </span><span class="yellow">'Maxim'</span>;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Hello, '</span> <span class="red">+ </span>name);
+				<br>
+				<br>
+				name<span class="red"> = </span><span class="yellow">'Ivan'</span>;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'Hello, '</span> <span class="red">+ </span>name);
+			</p>
+			<p class="code">
+				> Hello, Maxim
+				<br>
+				> Hello, Ivan
+			</p>
+			<p class="code">
+				const name<span class="red"> = </span><span class="yellow">'John'</span>;
+				<br>
+				<br>
+				<span class="grey">// Будет ошибка!</span>
+				<br>
+				<span class="grey">// name = 'Ivan';</span>
+			</p>
+			<h2 class="title">Типы данных</h2>
+			<p class="text">Значение в JavaScript всегда относится к данным <span class="ci">определённого типа</span>. Например, это может быть <span class="b">строка</span> или <span class="b">число</span>.</p>
+			<p class="text">В JavaScript есть 8 типов данных:</p>
+			<ul class="tasks">
+				<li class="task">number - целые и дробные числа</li>
+				<li class="task">string - текстовая информация (пишется в кавычках)</li>
+				<li class="task">boolean - true или false</li>
+				<li class="task">object - ссылочный тип данных</li>
+				<li class="task">undefined - отсутствие значения по умолчанию</li>
+				<li class="task">null - отсутствие значения, которое установил пользователь</li>
+				<li class="task">symbol - создает уникальный идентификатор (нужен для объектов)</li>
+				<li class="task">BigInt - ооочень большие числа</li>
+			</ul>
+			<p class="code">
+				<span class="blue">let </span>counter<span class="red"> = </span><span class="purple">10</span>;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(counter, <span class='blue'>typeof</span> counter);
+				<br>
+				<br>
+				<span class="blue">let </span>name<span class="red"> = </span><span class="yellow">'Maxim'</span>;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(name, <span class='blue'>typeof</span> name);
+				<br>
+				<br>
+				<span class="blue">let </span>isActive<span class="red"> = </span><span class="purple">true</span>;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(isActive, <span class='blue'>typeof</span> isActive);
+			</p>
+			<p class="code">
+				> 10 number
+				<br>
+				> Maxim string
+				<br>
+				> true boolean
+			</p>
+			<p class="code">
+				<span class="blue">let </span>novalue;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(novalue, <span class='blue'>typeof</span> novalue);
+			</p>
+			<p class="code">
+				> undefined undefined
+			</p>
+			<h2 class="title">Тип данных number</h2>
+			<p class="text">Числовой тип данных (<span class="ci"> number </span>) - это целочисленные и <span class="b">числа</span> с плавающей точкой.</p>
+			<p class="text">К числам мы можем применять различные математические операции, такие как <span class="ci">умножение, деление, сложение, вычитание</span> и так далее.</p>
+			<p class="text">Кроме обычных чисел, существуют так называемые «специальные числовые значения», которые относятся к этому типу данных: <span class="ci">Infinity</span>, <span class="ci">-Infinity</span> и <span class="ci">NaN</span>. Мы можем получить такие значения, например, при делении на ноль:</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="purple">1</span><span class="red"> / </span><span class="purple">0</span>);
+			</p>
+			<p class="code">
+				> Infinity
+			</p>
+			<p class="text"><span class="ci">NaN</span> или Not a Number (не число) означает вычислительную ошибку, например:</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">'hello'</span><span class="red"> / </span><span class="purple">2</span>);
+			</p>
+			<p class="code">
+				> NaN
+			</p>
+			<p class="text">Функция <span class="ci">parseInt()</span> делает значение целочисленным (без дробной части).</p>
+			<p class="code">
+				<span class="blue">let </span>a<span class="red"> = </span><span class="yellow">'123'</span>;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(a, <span class='blue'>typeof</span> a);
+				<br>
+				<br>
+				<span class="blue">let </span>b<span class="red"> = </span><span class="blue">parseInt</span>(a);
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(b, <span class='blue'>typeof</span> b);
+			</p>
+			<p class="code">
+				> 123 string
+				<br>
+				> 123 number
+			</p>
+			<h2 class="title">Тип данных string</h2>
+			<p class="text">Строка (string) в JavaScript должна быть заключена в кавычки. В JavaScript существует три типа кавычек: </p>
+			<ul class="tasks">
+				<li class="task">Двойные кавычки: "Привет"</li>
+				<li class="task">Одинарные кавычки: 'Привет'</li>
+				<li class="task">Обратные кавычки: `Привет`</li>
+			</ul>
+			<p class="text">Двойные или одинарные кавычки являются «простыми», между ними нет разницы в JavaScript.</p>
+			<p class="text">Обратные кавычки же имеют «расширенный функционал». Они позволяют нам встраивать выражения в строку, заключая их в ${…}. Например:</p>
+			<p class="code">
+				<span class="blue">let </span>name<span class="red"> = </span>"Петя";
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">`Привет, ${name}!`</span>);
+			</p>
+			<p class="code">
+				> Привет, Петя
+			</p>
+			<h2 class="title">Тип данных boolean</h2>
+			<p class="text">Булевый тип (boolean) может принимать только два значения: true (истина) и false (ложь).</p>
+			<p class="text">Такой тип, как правило, используется для хранения значений да/нет: true значит «да, правильно», а false значит «нет, не правильно».</p>
+			<p class="code">
+				<span class="blue">let </span>isReady<span class="red"> = </span><span class="purple">false</span>;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(isReady, <span class='blue'>typeof</span> isReady);
+			</p>
+			<p class="code">
+				> <span class="purple">false</span> boolean
+			</p>
+			<p class="text">Булевые значения также могут быть результатом сравнений:</p>
+			<p class="code">
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">`10 > 5 : <span class="white">${10 > 5}</span>`</span>);
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(<span class="yellow">`10 < 5 : <span class="white">${10 < 5}</span>`</span>);
+			</p>
+			<p class="code">
+				> <span class="purple">10</span><span class="red"> > </span><span class="purple">5</span> : <span class="purple">true</span>
+				<br>
+				> <span class="purple">10</span><span class="red"> < </span><span class="purple">5</span> : <span class="purple">false</span>
+			</p>
+			<h2 class="title">Решение задач</h2>
+			<p class="text"><span class="num">1.</span> Выведите свою имя и фамилию в формате:
+			<span class="ci">Привет, Иван Иванов!</span></p>
+			<p class="text"><span class="num">2.</span> С помощью функции <span class="ci">random()</span> из класса <span class="ci">Math</span> можно сгенерировать случайное число.</p>
+			<p class="code">
+				<span class="blue">let </span>randomNumber<span class="red"> = </span>Math.<span class="blue">random</span>();
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(randomNumber); <span class="grey">// -> случайное число от 0 до 1</span>
+			</p>
+			<p class="code">
+				<span class="blue">let </span>anotherNumber<span class="red"> = </span><span class="blue">parseInt</span>( Math.<span class="blue">random</span>() <span class="red">* </span><span class="purple">10</span> );
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(anotherNumber); <span class="grey">// -> случайное целое число от 0 до 10</span>
+			</p>
+			<p class="text">Выведите периметр прямоугольника со случайными значениями сторон (нужно сгенерировать два случайных числа).</p>
+			<p class="text"><span class="num">3.</span> Даны два случайных числа a и b. Найдите их среднее арифметическое: <span class="ci">(a + b) / 2</span>.</p>
+			<p class="text"><span class="num">4.</span> Функция <span class="ci">prompt()</span> выводит модальное окно с полем для ввода текста. </p>
+			<p class="code">
+				<span class="blue">let </span>name<span class="red"> = </span><span class="blue">prompt</span>(<span class="yellow">'Введите свое имя'</span>);
+				<br>
+				<span class="blue">alert</span>(<span class="yellow">`Привет, <span class="white">${name}</span>!`</span>);
+			</p>
+			<p class="text">Пользователь вводит свое имя и возраст. Выведите всплывающее окно со строкой в формате <span class="ci">'Привет, Иван! Твой возраст - 24.'</span></p>
+			<p class="text">Пользователь вводит размер файла в байтах с помощью функции <span class="ci">prompt()</span>. Переведите введенные байты в мегабайты и выведите результат с помощью функции <span class="ci">alert()</span>.</p>
+			<p class="code">
+				<span class="grey">// Функция prompt() возвращает строковый тип данных.</span>
+				<br>
+				<span class="grey">// Для быстрого перевода в строки в число можно использовать унарный +.</span>
+				<br>
+				<span class="blue">let </span>num<span class="red"> = </span><span class='red'>+</span><span class="yellow">'123'</span>;
+				<br>
+				<span class="blue">console</span>.<span class="blue">log</span>(num, <span class='blue'>typeof</span> num);
+			</p>
+			<p class="code">
+				> 123 number
+			</p>
+		</div>
+	</body>
+</html>

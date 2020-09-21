@@ -1,7 +1,9 @@
 html {
-    font-size: 20px;
-    line-height: 1.4;
-    font-family: monospace;
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 400;
+    color: #222;
+    font-family: 'Raleway', sans-serif;
 }
 
 html,body {
@@ -12,82 +14,79 @@ html,body {
     max-width: 800px;
     margin: auto;
     width: 95%;
-    font-size: 18px;
     position: relative;
     padding-top: 50px;
     padding-bottom: 50px;
 }
+
 .big-title {
-	font-family: 'Rubik Mono One', sans-serif;
-	font-size: 5rem;
+	font-size: 40px;
 	margin-top: 0;
-	line-height: 1;
-}
-.main-title {
-    font-size: 3rem;
-    margin: 1rem 0;
     font-weight: 900;
-    
+}
+
+.main-title {
+    font-size: 40px;
+    margin: 0.5em 0;
+    letter-spacing: 0.5px;
 }
 
 .title {
-    font-size: 1.7rem;
-    margin: 1rem 0;
-    line-height: 1.2;
-    
-}
-
-.code {
-    font-size: 0.9rem;
-}
-
-.text {
-    font-size: 1.1rem;
-    margin: 0.7rem 0;
-    
+    font-size: 32px;
+    margin: 1.5em 0 0.75em;
+    letter-spacing: 0.5px;
 }
 
 .tasks {
-    list-style-type: none;
+    margin: 0;
 }
 
 .task {
-    font-size: 1rem;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-family: 'Source Code Pro', monospace;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+
 }
 
-.mt {
-    margin-top: 30px;
+.text {
+    letter-spacing: 0.4px;
+    margin: 0.75em 0;
+    line-height: 1.75;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+.b {
+    font-weight: 700;
+    letter-spacing: 0.1px;
 }
 
 .num {
-    display: inline-block;
-    margin-right: 5px;
-    font-size: 2rem;
+    font-size: 40px;
     font-weight: bold;
-    line-height: 1;
+    font-family: 'Source Code Pro', monospace; 
 }
 
-.code, .high {
-    line-height: 1;
-    display: inline-block;
-    margin-right: 4px;
-    padding: 3px 6px;
-    font-family: monospace;
-    color: #fff;
-    border-radius: 4px;
-    background-color: #2c292d;
-    white-space: nowrap;
+.ci {
+   font-family: 'Source Code Pro', monospace; 
+   white-space: nowrap;
 }
 
 .code {
-    display: block;
+    border-radius: 8px;
+    font-size: 17px;
     overflow: auto;
-    padding: 10px 20px;
-    line-height: 1.5;
-}
-
-.code_text {
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: #2c292d;
     white-space: nowrap;
+    font-family: 'Source Code Pro', monospace;
+    color: #fff;
+    line-height: 1.7;
 }
 
 .grey {
@@ -109,6 +108,9 @@ html,body {
 .orange {
     font-style: italic;
     color: #fc9968!important;
+}
+.white {
+    color: #eee;
 }
 
 .purple {
@@ -170,6 +172,7 @@ svg {
 	height: 15px;
 	
 	background-color: #78dce9;
+    background-color: #fc9968;
 	opacity: 0.3;
 	transition: 0.3s;
 	width: 100%;
@@ -214,10 +217,11 @@ svg {
 }
 
 .special { 
-    font-size: 1rem;
+    font-size: 16px;
     padding: 0;
+    font-weight: 500;
     position: relative;
-    padding: 0 10px;
+    padding: 5px 20px;
     line-height: 1.7;
 }
 
@@ -274,17 +278,8 @@ svg {
     .link {
         font-size: 17px;
     }
-   /* .link {
-    	font-size: 18px;
-		display: block;	
-		border: 1px solid #999;
-		border-radius: 3px;
-
-    }*/
+  
 	.link:after {
-		/*height: 100%;*/
-		/*opacity: 0.9;*/
-		/*background-color: transparent!important;*/
         padding: 10px;  
         height: 40%;
         -webkit-box-sizing: border-box;

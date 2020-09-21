@@ -1,21 +1,13 @@
 import re
-from bs4 import BeautifulSoup
-from bs4 import UnicodeDammit
-methods = ['left', 'forward', 'right', 'penup', 'setpos', 'pendown', 'color','let', 'str','capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 
-'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace',
- 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 
-'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill', 'append', 'clear', 'copy', 'count', 'extend', 'index', 'insert', 'pop', 
-'remove', 'reverse', 'sort', 'clear', 'copy', 'fromkeys', 'items', 'keys', 'pop',
- 'popitem', 'setdefault', 'update', 'values', 'dict', 'print', 
-'len', 'float','bool', 'list', 'tupple', 'range', 'close', 'write', 'input', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 
-'copysign', 'cos', 'cosh', 'degrees', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 
-'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 
-'pow', 'random', 'parseInt', 'radians', 'typeof', 'remainder', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc', 'randint', 'pprint', 'open', 'log', 'console']
-operations = ['>=', '<=', '+=','-', '**','+', '*', '//',   '!=', 'and', 'for', 'or']
+
+
+methods = dir([]) + dir('') + dir({}) + ['print', 'input', 'max', 'min', 'sum', 'dict', 'int', 'float', 'str', 'list', 'set', 'bool']
+operations = ['not', 'for', '>=', '<=', '+=','-', '**','+', '*', '//',   '!=', 'and', 'or']
 orange_words = [r'stream<', r'end<', r'sep<', r'text<']
-system_words = ['%', '==','assert ',' as ','with ','from ','elif ', 'if ','while ', 'for ', 'return ', 'else',  'break'	,'continue']
+system_words = [ '%', '==','assert ',' as ','with ','from ','elif ', 'if ','while ', 'for ', 'return ', 'else',  'break'	,'continue']
+
+
 def repl(m): 
-	
 	return '<span class="purple">' + m[0] + '</span>'
 def purple(m):
 	t = m[0]
@@ -51,13 +43,13 @@ class Formatter:
 
 	def create_html(self):
 		begin = """<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width" name='viewport'>
-	<title>Цикл for</title>
-	<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;display=swap" rel="stylesheet"/>
+	<title>Строки в Python</title>
+	<link rel="stylesheet" href="main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="container">"""
@@ -70,17 +62,18 @@ class Formatter:
 		t = '\t\t\t'
 		# start = self.content.find('№ ')
 		# end = self.content[start+2:].find('\n')
-		title = '<h1 class="main-title">' + code[2:-1] + '</h1>'
+		title = '<h1 class="main-title">' + code[2:-1] + '</h1>' 
 		self.content = self.content.replace(code, '')
 		self.data += t + title + '\n'
 
 	def make_code_p(self, code):
 		lines = [el.rstrip()  for el in code[2:-2].split('\n') if el]
 		# make colors	
+
 		for ind, text in enumerate(lines):
-			if text.find('//') != -1:
-				comment = '<span class="grey">' + text[text.find('//'):]+'</span>'
-				text = text[:text.find('// ')]
+			if text.find('#') != -1:
+				comment = '<span class="grey">' + text[text.find('#'):]+'</span>'
+				text = text[:text.find('# ')]
 			else:
 				comment = ''
 			text = re.sub(r'\w{1}=\S', reddy, text)
@@ -100,12 +93,11 @@ class Formatter:
 			text = text.replace('int(', f'<span class="blue">int</span>(')
 			text = text.replace('str(', f'<span class="blue">int</span>(')
 			text = text.replace(' <<', f'<span class="red"> <</span><')
-			text = text.replace('let ', f'<span class="blue">let </span>')
-
 			text = re.sub(r'\s{1}=\s{1}', red, text)
 			text = re.sub(r'\s{1}>\s{1}', red, text)
 			text = re.sub(r'\s{1}<\s{1}', red, text)
 			text = re.sub(r'(\x20\x20\x20\x20)', r'&nbsp;&nbsp;&nbsp;&nbsp;', text)
+			text = text.replace('>>>', '<span class="red">>></span>')
 			
 			text = re.sub(r'(def \w+)', f_name, text)
 			text = re.sub(r'true|false', repl, text)
@@ -122,7 +114,7 @@ class Formatter:
 				text = re.sub(o, orange, text)
 			text = text + comment
 			lines[ind] = text
-
+			
 
 		text = '<p class="code">\n\t\t\t\t' + '\n\t\t\t\t<br>\n\t\t\t\t'.join(lines) + '\n\t\t\t</p>'
 		self.content = self.content.replace(code, '')
@@ -135,7 +127,13 @@ class Formatter:
 		title = '<p class="text">' + code[2:-1] + '</p>'
 		self.content = self.content.replace(code, '')
 		self.data += t + title + '\n'
-
+	def make_highlight(self, code):
+		t = '\t\t\t'
+		# start = self.content.find('№ ')
+		# end = self.content[start+2:].find('\n')
+		title = '<span class="new">' + code[2:-1] + '</span>'
+		self.content = self.content.replace(code, '')
+		self.data += t + title + '\n'
 	def make_subtitle(self, code):
 		t = '\t\t\t'
 		# start = self.content.find('№ ')
@@ -150,20 +148,22 @@ class Formatter:
 			if symbol == '№':
 				end = self.content.find('\n')
 				self.make_title(self.content[0:end+1])
-			elif symbol == '\\':
+			elif symbol == '*':
 				end = self.content.find('\n')
 				self.make_subtitle(self.content[0:end+1])
 			elif symbol == '@':
 				end = self.content[1:].find('@\n') 
 				self.make_code_p(self.content[0:end+3])
+				
 				# print(self.content)
 			elif symbol == '!':
 				end = self.content.find('\n')
 				self.make_text(self.content[0:end+1])
+
 			else:
 				break
 
 		self.create_html()
 # formatter = Formatter('test.txt', 'test.html')
-formatter = Formatter('variable.txt', 'variable.html')
+formatter = Formatter('strings.txt', 'strings.html')
 formatter.format()
