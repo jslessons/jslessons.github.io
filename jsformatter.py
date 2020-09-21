@@ -10,7 +10,7 @@ methods = ['left', 'forward', 'right', 'penup', 'setpos', 'pendown', 'color','le
 'len', 'float','bool', 'list', 'tupple', 'range', 'close', 'write', 'input', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 
 'copysign', 'cos', 'cosh', 'degrees', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 
 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 
-'pow', 'random', 'parseInt', 'radians', 'typeof', 'remainder', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc', 'randint', 'pprint', 'open', 'log', 'console']
+'pow', 'random', 'const', 'alert', 'prompt', 'parseInt', 'radians', 'typeof', 'remainder', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc', 'randint', 'pprint', 'open', 'log', 'console']
 operations = ['>=', '<=', '+=','-', '**','+', '*', '//',   '!=', 'and', 'for', 'or']
 orange_words = [r'stream<', r'end<', r'sep<', r'text<']
 system_words = ['%', '==','assert ',' as ','with ','from ','elif ', 'if ','while ', 'for ', 'return ', 'else',  'break'	,'continue']
@@ -51,16 +51,18 @@ class Formatter:
 
 	def create_html(self):
 		begin = """<!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width" name='viewport'>
-	<title>Цикл for</title>
+	<title>Условный оператор</title>
 	<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;display=swap" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="container">"""
+	<div class="container">
+	<a href="index.html" class="link special" ><span>Назад в начало</span></a>"""
 		end = f"""\n{self.data}\n\t\t</div>\n\t</body>
 </html>"""
 		with open(self.output, 'w', encoding='utf-8') as f:
@@ -70,7 +72,7 @@ class Formatter:
 		t = '\t\t\t'
 		# start = self.content.find('№ ')
 		# end = self.content[start+2:].find('\n')
-		title = '<h1 class="main-title">' + code[2:-1] + '</h1>'
+		title = '<h2 class="title">' + code[2:-1] + '</h2>'
 		self.content = self.content.replace(code, '')
 		self.data += t + title + '\n'
 
@@ -165,5 +167,5 @@ class Formatter:
 
 		self.create_html()
 # formatter = Formatter('test.txt', 'test.html')
-formatter = Formatter('variable.txt', 'variable.html')
+formatter = Formatter('if.txt', 'if.html')
 formatter.format()

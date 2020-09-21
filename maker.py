@@ -62,7 +62,7 @@ class Formatter:
 		t = '\t\t\t'
 		# start = self.content.find('№ ')
 		# end = self.content[start+2:].find('\n')
-		title = '<h1 class="main-title">' + code[2:-1] + '</h1>' 
+		title = '<h2 class="title">' + code[2:-1] + '</h2>' 
 		self.content = self.content.replace(code, '')
 		self.data += t + title + '\n'
 

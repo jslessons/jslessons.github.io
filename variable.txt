@@ -56,13 +56,13 @@ const name = 'John';
 ! BigInt - ооочень большие числа
 @
 let counter = 10;
-console.log(counter, typeof counter);
+console.log(counter, <span class='blue'>typeof</span>counter);
 <br>
 let name = 'Maxim';
-console.log(name, typeof name);
+console.log(name, <span class='blue'>typeof</span>name);
 <br> 
 let isActive = true;
-console.log(isActive, typeof isActive);
+console.log(isActive, <span class='blue'>typeof</span>isActive);
 @
 @
 > 10 number
@@ -71,7 +71,7 @@ console.log(isActive, typeof isActive);
 @
 @
 let novalue;
-console.log(novalue, typeof novalue);
+console.log(novalue, <span class='blue'>typeof</span>novalue);
 @
 @
 > undefined undefined
@@ -96,10 +96,10 @@ console.log('hello' / 2);
 ! Функция parseInt() делает значение целочисленным (без дробной части).
 @
 let a = '123';
-console.log(a, typeof a);
+console.log(a, <span class='blue'>typeof</span>a);
 <br>
 let b = parseInt(a);
-console.log(b, typeof b);
+console.log(b, <span class='blue'>typeof</span>b);
 @
 ! Тип данных string
 ! Строка (string) в JavaScript должна быть заключена в кавычки.
@@ -121,7 +121,7 @@ console.log(`Привет, ${name}!`);
 ! Такой тип, как правило, используется для хранения значений да/нет: true значит «да, правильно», а false значит «нет, не правильно».
 @
 let isReady = false; 
-console.log(isReady, typeof isReady);
+console.log(isReady, <span class='blue'>typeof</span>isReady);
 @
 @
 > false boolean
@@ -160,7 +160,7 @@ alert(`Привет, ${name}!`);
 // Функция prompt() возвращает строковый тип данных.
 // Для быстрого перевода в строки в число можно использовать унарный +.
 let num = +'123';
-console.log(num, typeof num);
+console.log(num, <span class='blue'>typeof</span>num);
 @
 @
 > 123 number

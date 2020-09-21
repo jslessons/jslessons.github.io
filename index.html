@@ -3,27 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width" name='viewport'>
-	<title>Главная страница</title>
+	<title>Немного о JavaScript</title>
 	<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&amp;display=swap" rel="stylesheet"/></head>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 <body>
 	<div class="container">
-		<h1 class="big-title">Java<span class="yel">S</span>cript</h1>
-		<p class="text">
-			<a href="var.html" class="link"><span class="num">1. </span>Переменные и типы данных</a>
-		</p>
-		<p class="text">
-			<a href="if.html" class="link"><span class="num">2. </span>Условный оператор</a>
-		</p>
-		<p class="text">
-			<a href="for.html" class="link"><span class="num">3. </span>Цикл for и перебор массивов</a>
-		</p>
-		<p class="text">
-			<a href="#" class="link"><span class="num">4. </span>Функции</a>
-		</p>
-		
-
-	
+		<h1 class="title ci" style='font-size: 40px;'>Немного о JavaScript</h2>
+		<p class="text ci" style='margin-bottom: 30px;'>Этот сайт сделан для того, чтобы вы научились делать сайты лучше него.</p>
+		<a href="variable.html" class="card">
+			<span>1. Переменные и типы данных</span>
+		</a>
+		<a href="if.html" class="card">
+			<span>2. Условный оператор</span>
+		</a><!-- 
+		<a href="for.html" class="card">
+			<span>3. Цикл for и перебор массивов</span>
+		</a> -->
 	</div>
+
+	<p class="text ci" style='text-align: center;position: absolute; bottom: 0;width: 100%;'>@gr4m0zeka</p>
+
+	<script>
+		const links = [...document.querySelectorAll('.card')];
+		const colors = ['#fc9968', '#78dce9', '#ff6189', '#aadc76', '#ffd865', '#aa9ef2'];
+
+		links.forEach(link => {
+			link.addEventListener('mouseenter', event => {
+				let idx = parseInt( Math.random() * colors.length );
+				link.style.color = colors[idx];
+				link.style.boxShadow = '0 0 20px 0 rgba(0,0,0,0.6)';
+			});
+
+			link.addEventListener('mouseleave', event => {
+				link.style.color = '#ffffff';
+				link.style.boxShadow = '0 0 10px 0 rgba(0,0,0,0.1)';
+			});
+		});
+
+	</script>
 </body>
 </html>

@@ -1,0 +1,94 @@
+№ Условный оператор 
+! Оператор <span class='ci'>if (...)</span> вычисляет условие в скобках и, если результат <span class='ci'>true</span>, то выполняет блок кода.
+@
+let isReady = true;
+if (isReady) {
+    console.log('Чай готов!');
+} else {
+    console.log('Вода еще не закипела');
+}
+@
+@
+> Чай готов!
+@
+! Если изменить значение переменной <span class='ci'>isReady</span> на <span class='ci'>false</span>, то выведется строка <span class='ci'>'Вода</span> <span class='ci'>еще</span> <span class='ci'>не</span> <span class='ci'>закипела</span>'
+@
+> Вода еще не закипела
+@
+! Инструкция <span class='ci'>if (…)</span> вычисляет выражение в скобках и преобразует результат к логическому типу.
+! Число <span class='ci'>0</span>, пустая строка <span class='ci'>""</span>, <span class='ci'>null</span>, <span class='ci'>undefined</span> и <span class='ci'>NaN</span> становятся <span class='ci'>false</span>. Из-за этого их называют «ложными» («falsy») значениями.
+! Остальные значения становятся <span class='ci'>true</span>, поэтому их называют «правдивыми» («truthy»).
+! Таким образом, код при таком условии никогда не выполнится:
+@
+if (0) {
+    console.log('Я никогда не выполнюсь :(');
+}
+@
+@
+if (1) {
+    console.log('А я всегда выполнюсь :)');
+}
+@
+! Инструкция <span class='ci'>if</span> может содержать необязательный блок <span class='ci'>else</span> («иначе»). Он выполняется, когда условие ложно.
+! Иногда, нужно проверить несколько вариантов условия. Для этого используется блок <span class='ci'>else if</span>
+@
+let random = parseInt( Math.random() * 3 );<br>
+if (random == 0) {
+    console.log('Выпал ноль');
+} else if (random == 1) {
+    console.log('Выпала единица');
+} else {
+    console.log('Выпала двойка');
+}
+@
+! Тернарный оператор позволяет упростить конструкции такого вида:
+@
+let isVisible = true;<br>
+let value;<br>
+if (isVisible) {
+    value = 100;
+} else {
+    value = 0;
+}
+@
+@
+// Используем тернарный оператор
+let isVisible = true;<br>
+let value = isVisible ? 100 : 0;
+console.log(value);
+@
+@
+> 100
+@
+! Тернарный оператор сокращает количество кода в простых условных операторах. 
+! Если условие истинно, то оператор вернет значение после вопросительного знака <span class='ci'>?</span>, если условие ложно, то вернется значение после двоеточия <span class='ci'>:</span>.
+@
+let isVisible = false;<br>
+let value = isVisible ? 100 : 0;
+console.log(value);
+@
+@
+> 0
+@
+№ Решение задач
+! 1. Пользователь вводит два числа с помощью функции <span class='ci'>prompt()</span>. Выведите большее из введенных чисел на экран.
+! 2. Пользователь вводит номер дня недели, выведите строку <span class='ci'>'Будние'</span> или строку <span class='ci'>'Выходные'</span>.
+@
+> 1
+@
+@
+> Будние
+@
+! 3. Пользователь вводит число. Выведите строку <span class='ci'>'YES'</span>, если число является трехзначным, и строку <span class='ci'>'NO'</span> в противном случае.
+! 4. Пользователь вводит число. Выведите строку <span class='ci'>'YES'</span>, если число является четным, и строку <span class='ci'>'NO'</span> в противном случае.
+! 5. Перепишете условный оператор в тернарный оператор.
+@
+let a = 100,
+    b = 99;<br>
+let max;<br>
+if (a > b) {
+    max = a;
+} else {
+    max = b;
+}
+@
