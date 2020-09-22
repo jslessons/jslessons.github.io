@@ -99,7 +99,7 @@ body {
     font-weight: bold;
     font-family: 'Source Code Pro', monospace; 
     line-height: 1;
-    margin-top: 40px;
+    margin-top: 15px;
     display: inline-block;
     background-color: #78dce9;
     border-radius: 50%;
@@ -111,6 +111,10 @@ body {
     margin-right: 5px;
 }
 
+
+.mt0 {
+    margin-top: 0;
+}
 
 
 .code {
