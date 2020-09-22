@@ -167,5 +167,5 @@ class Formatter:
 
 		self.create_html()
 # formatter = Formatter('test.txt', 'test.html')
-formatter = Formatter('if.txt', 'if.html')
+formatter = Formatter('while.txt', 'while.html')
 formatter.format()

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="width=device-width" name='viewport'>
+		<title>Условный оператор</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			
+			<h2 class="title">Цикл while</h2>
+			<a href="index.html" class="link special" ><span>Назад в начало</span></a>
+			<p class="text" style='margin-top: 30px;'>При написании скриптов зачастую встаёт задача сделать однотипное действие много раз. Например, вывести товары из списка один за другим. Или просто перебрать все числа от 1 до 10 и для каждого выполнить одинаковый код.</p>
+			<p class="text">Для многократного повторения одного участка кода предусмотрены циклы.</p>
+			<p class="text">Цикл <span class='ci'>while</span> имеет следующий синтаксис:</p>
+			<p class="code">
+				<span class="red">while </span>(condition) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">// some code</span>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="grey">// тело цикла</span>
+				<br>
+				}
+			</p>
+			<p class="text">Код из тела цикла выполняется, пока условие <span class='ci'>condition</span> истинно.</p>
+			<p class="code">
+				<span class="blue">let </span>year<span class="red"> = </span><span class="purple">2016</span>;<br>
+				<br>
+				<span class="red">while </span>(year <span class="red"><= </span><span class="purple">2020</span>) {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(year);
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;year<span class="red"> = </span>year <span class="red">+ </span><span class="purple">1</span>;
+				<br>
+				}
+			</p>
+			<p class="code">
+				> <span class="1">2016</span>
+				<br>
+				> <span class="1">2017</span>
+				<br>
+				> <span class="1">2018</span>
+				<br>
+				> <span class="1">2019</span>
+				<br>
+				> <span class="1">2020</span>
+				<br>
+				> <span class="1">2021</span>
+			</p>
+			<p class="text">Одно выполнение тела цикла по-научному называется итерация. Цикл в примере выше совершает шесть итераций.</p>
+			<p class="text">Если бы строка <span class='ci'>year += 1</span> отсутствовала в примере выше, то цикл бы повторялся (в теории) вечно. </p>
+			<p class="text">Любое выражение или переменная может быть условием цикла, а не только сравнение: условие <span class='ci'>while</span> вычисляется и преобразуется в логическое значение.</p>
+			<p class="code">
+				<span class="blue">let </span>num<span class="red"> = </span><span class="purple">5</span>;
+				<br>
+				<span class="red">while </span>(num) { <span class="grey">// цикл остановится, когда num станет 0</span>
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(num);
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;num<span class="red"> = </span>num <span class="red">- </span><span class="purple">1</span>;
+				<br>
+				}
+			</p>
+			<p class="code">
+				5
+				<br>
+				4
+				<br>
+				3
+				<br>
+				2
+				<br>
+				1
+			</p>
+			<p class="text">Также можно записывать выражения следующим образом:</p>
+			<p class="code">
+				<span class="blue">let </span>num<span class="red"> = </span><span class="purple">5</span>;<br>
+				<br>
+				num<span class="red"> = </span>num <span class="red">- </span><span class="purple">1</span>; <span class="grey">// -> 4</span>
+				<br>
+				num <span class="red">-=</span> <span class="purple">1</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="grey">// -> 3</span>
+				<br>
+				<span class="red">--</span>num;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="grey">// -> 2</span>
+			</p>
+			<h2 class="title">Цикл do...while</h2>
+			<p class="text">Проверку условия можно разместить под телом цикла, используя специальный синтаксис <span class='ci'>do..while</span>:</p>
+			<p class="code">
+				<span class="red">do</span> {
+				<br>
+				<span class="grey">// тело цикла</span>
+				<br>
+				} <span class="red">while </span>(condition);
+			</p>
+			<p class="text">Цикл сначала выполнит тело, а затем проверит условие <span class='ci'>condition</span>, и пока его значение равно <span class='ci'>true</span>, он будет выполняться снова и снова.</p>
+			<p class="text">Такая форма синтаксиса оправдана, если вы хотите, чтобы тело цикла выполнилось хотя бы один раз, даже если условие окажется ложным. </p>
+			<p class="code">
+				<span class="blue">let </span>num<span class="red"> = </span><span class="purple">3</span>;
+				<br>
+				<span class="red">do</span> {
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">console</span>.<span class="blue">log</span>(num);
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="red">--</span>num;
+				<br>
+				} <span class="red">while </span>(num);
+			</p>
+			<p class="code">
+				> <span class="1">3</span>
+				<br>
+				> <span class="1">2</span>
+				<br>
+				> <span class="1">1</span>
+				<br>
+				> <span class="1">0</span>
+			</p>
+			<h2 class="title">Решение задач</h2>
+			<p class="text"><span class="num">1</span> Выведите числа от <span class='ci'>0 до 10</span> с помощью цикла <span class='ci'>while</span>.</p>
+			<p class="text"><span class="num">2</span> Выведите только четные числа от <span class='ci'>0 до 100</span> с помощью цикла <span class='ci'>while</span>.</p>
+			<p class="text"><span class="num">3</span> Пользователь вводит число. Выведите квадраты чисел от 1 до этого числа.</p>
+			<p class="text"><span class="num">4</span> Пользователь вводит два числа. Выведите все число от меньшего числа до большего.</p>
+			<p class="text"><span class="num">5</span> Пользователь вводит число. Выведите все числа от 0 до этого числа. Вместо чисел, делящихся на 3, выведите строку <span class='ci'>foo</span>, вместо чисел, делящихся на 5, выведите строку <span class='ci'>baz</span>, вместо чисел, делящихся на 3 и на 5, выведите строку <span class='ci'>foobaz</span>.</p>
+		</div>
+	</body>
+</html>
