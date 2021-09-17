@@ -4,11 +4,14 @@
 	<meta charset="UTF-8">
 	<meta content="width=device-width" name='viewport'>
 	<title>Немного о JavaScript</title>
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Russo+One&family=Source+Code+Pro&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+
 <body>
 	<div class="container">
-		<h1 class="big-title ci" style=''>Немного о JavaScript</h2>
+		<h1 class="first-title">Немного о JavaScript</h2>
 		<p class="text ci" style='margin-bottom: 30px;white-space: normal;'>Этот сайт сделан для того, чтобы вы научились делать сайты лучше него.</p>
 		<a href="variable.html" class="card">
 			<span>1. Переменные и типы данных</span>
@@ -31,12 +34,12 @@
 			link.addEventListener('mouseenter', event => {
 				let idx = parseInt( Math.random() * colors.length );
 				link.style.color = colors[idx];
-				link.style.boxShadow = '0 0 20px 0 rgba(0,0,0,0.6)';
+				link.style.boxShadow = '0 0 4px 0 rgba(255,255,255,0.2)';
 			});
 
 			link.addEventListener('mouseleave', event => {
 				link.style.color = '#ffffff';
-				link.style.boxShadow = '0 0 10px 0 rgba(0,0,0,0.1)';
+				link.style.boxShadow = '0 0 4px 0 rgba(255,255,255,0.1)';
 			});
 		});
 
